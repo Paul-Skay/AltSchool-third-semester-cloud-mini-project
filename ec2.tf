@@ -42,7 +42,7 @@ resource "aws_instance" "instance" {
 
 resource "null_resource" "ansible-playbook" {
   provisioner "local-exec" {
-    command = "ansible-playbook -i host-inventory --private-key ${var.ssh_key}.pem ./main.yml"
+    command = "ansible-playbook -i host-inventory ./main.yml"
   }
 
   depends_on = [aws_instance.instance]

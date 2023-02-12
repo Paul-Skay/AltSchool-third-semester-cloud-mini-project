@@ -34,7 +34,7 @@ resource "aws_security_group" "lb_sg" {
 
 resource "aws_security_group" "ec2_sg" {
   name        = "instaceSG"
-  description = "Allow only load balancer inbound traffic"
+  description = "Allow load balancer inbound traffic"
   vpc_id      = aws_vpc.custom_vpc.id
   egress = [
     {
